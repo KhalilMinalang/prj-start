@@ -1,4 +1,4 @@
-export class ingredient {
+export class Ingredient {
   // how classes should made originally
   // public name: string;
   // public amount: number;
