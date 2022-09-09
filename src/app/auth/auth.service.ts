@@ -14,9 +14,9 @@ interface AuthResponsData {
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  signp(email: string, password: string) {
+  signup(email: string, password: string) {
     return this.http.post<AuthResponsData>(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyA0FtYW-Kc5Wc5NQ5YwiMZ-gQlWd7ve2OM",
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA0FtYW-Kc5Wc5NQ5YwiMZ-gQlWd7ve2OM",
       {
         email: email,
         password: password,
