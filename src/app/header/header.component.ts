@@ -9,7 +9,12 @@ import { DataStorageService } from "../shared/data-storage.service";
 // a component is just a header class
 export class HeaderComponent {
   constructor(private dataStorageService: DataStorageService) {}
+
   onSaveData() {
     this.dataStorageService.storeRecipes();
+  }
+
+  onFetchData() {
+    this.dataStorageService.fetchRecipes();
   }
 }
