@@ -15,6 +15,14 @@ const appRoutes: Routes = [
     // modern syntax
     // loadChildren: () => import("./recipes/recipes.module").then((m) => m.RecipesModule),
   },
+  {
+    path: "shopping-list",
+    loadChildren: "./shopping-list/shopping-list.module#ShoppingListModule",
+  },
+  {
+    path: "auth",
+    loadChildren: "./auth/auth.module#AuthModule",
+  },
 ];
 
 @NgModule({

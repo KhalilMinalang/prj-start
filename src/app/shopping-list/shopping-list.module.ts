@@ -16,7 +16,8 @@ import { SharedModule } from "../shared/shared.module";
     // the shortcut
     RouterModule.forChild([
       {
-        path: "shopping-list",
+        // path: "shopping-list",
+        path: "",
         component: ShoppingListComponent,
       },
     ]),
