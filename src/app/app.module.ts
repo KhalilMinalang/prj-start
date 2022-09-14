@@ -7,6 +7,7 @@ import { HeaderComponent } from "./header/header.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { CoreModule } from "./core.module";
+import { LogginService } from "./logging.service";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -14,10 +15,10 @@ import { CoreModule } from "./core.module";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    SharedModule,
+    // SharedModule,
     CoreModule,
   ],
-  providers: [],
+  providers: [LogginService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
