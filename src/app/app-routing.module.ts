@@ -8,6 +8,13 @@ const appRoutes: Routes = [
     // please provide 'pathMatch' error fix
     pathMatch: "full",
   },
+  {
+    path: "recipes",
+    // old synax
+    loadChildren: "./recipes/recipes.module#RecipesModule",
+    // modern syntax
+    // loadChildren: () => import("./recipes/recipes.module").then((m) => m.RecipesModule),
+  },
 ];
 
 @NgModule({
