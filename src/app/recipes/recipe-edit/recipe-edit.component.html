@@ -63,6 +63,8 @@
       </div>
       <div class="row">
         <div class="col-xs-12" formArrayName="ingredients">
+          <!-- This will trigger an error during build since building uses AoT compilation -->
+          <!-- Unlike during development where "ng serve" builing uses JiT compilation  -->
           <!-- <div
             class="row"
             *ngFor="
@@ -73,7 +75,7 @@
           > -->
           <div
             class="row"
-            *ngFor="let ingredientCtrl of controls; let i = index"
+            *ngFor="let ingredientCtrl of ingredientsControls; let i = index"
             [formGroupName]="i"
             style="margin-top: 10px"
           >

@@ -15,7 +15,7 @@ import { LogginService } from "./logging.service";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    // SharedModule,
+    SharedModule,
     CoreModule,
   ],
   providers: [LogginService],
