@@ -34,6 +34,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     //   }
     // );
     this.ingredients = this.store.select("shoppingList");
+    // you can always subscribe to it
+    // this.ingredients = this.store.select("shoppingList").subscribe();
 
     this.loggingService.printLog("Hello from ShoppingListComponent ngOnInit");
   }
