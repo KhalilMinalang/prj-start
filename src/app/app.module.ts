@@ -9,7 +9,9 @@ import { SharedModule } from "./shared/shared.module";
 import { CoreModule } from "./core.module";
 import { LogginService } from "./logging.service";
 import { StoreModule } from "@ngrx/store";
-import { shoppingListReducer } from "./shopping-list/store/shopping-list.reducer";
+// import { shoppingListReducer } from "./shopping-list/store/shopping-list.reducer";
+// import { authReducer } from "./auth/store/auth.reducer";
+import * as fromApp from "./store/app.reducer";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -17,7 +19,11 @@ import { shoppingListReducer } from "./shopping-list/store/shopping-list.reducer
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot({ shoppingList: shoppingListReducer }),
+    // StoreModule.forRoot({
+    //   shoppingList: shoppingListReducer,
+    //   auth: authReducer,
+    // }),
+    StoreModule.forRoot(fromApp.appReducer),
     SharedModule,
     CoreModule,
   ],
