@@ -42,6 +42,9 @@ export class AuthComponent implements OnInit, OnDestroy {
       // if (authState.user) {
       //   this.router.navigate(["/recipes"]);
       // }
+      if (this.error) {
+        this.showErrorAlert(this.error);
+      }
     });
   }
 
