@@ -9,9 +9,11 @@ import { SharedModule } from "./shared/shared.module";
 import { CoreModule } from "./core.module";
 import { LogginService } from "./logging.service";
 import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
 // import { shoppingListReducer } from "./shopping-list/store/shopping-list.reducer";
 // import { authReducer } from "./auth/store/auth.reducer";
 import * as fromApp from "./store/app.reducer";
+import { AuthEffects } from "./auth/store/auth.effects";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -24,6 +26,7 @@ import * as fromApp from "./store/app.reducer";
     //   auth: authReducer,
     // }),
     StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([AuthEffects]),
     SharedModule,
     CoreModule,
   ],
