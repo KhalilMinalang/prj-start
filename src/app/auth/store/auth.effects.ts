@@ -122,7 +122,11 @@ export class AuthEffects {
 
   @Effect({ dispatch: false })
   authSuccess = this.actions$.pipe(
-    ofType(AuthActions.AUTHENTICATE_SUCCESS),
+    ofType(
+      AuthActions.AUTHENTICATE_SUCCESS,
+      // you can react to multiple actions
+      AuthActions.LOGOUT
+    ),
     tap(() => {
       this.router.navigate(["/"]);
     })
