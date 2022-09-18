@@ -62,7 +62,6 @@ export class AuthEffects {
   authSignup = this.actions$.pipe(
     ofType(AuthActions.SIGNUP_START),
     switchMap((signupAction: AuthActions.SignupStart) => {
-      console.log("SignupStart call effect");
       return this.http
         .post<AuthResponsData>(
           "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" +
@@ -78,7 +77,6 @@ export class AuthEffects {
             this.authService.setLogoutTimer(+resData.expiresIn * 1000);
           }),
           map((resData) => {
-            console.log("ok");
             return handleAuthentication(
               +resData.expiresIn,
               resData.email,
@@ -87,7 +85,6 @@ export class AuthEffects {
             );
           }),
           catchError((errorRes) => {
-            console.log("err");
             return handleError(errorRes);
           })
         );
