@@ -15,6 +15,7 @@ import { LogginService } from "./logging.service";
 import { AuthEffects } from "./auth/store/auth.effects";
 import { environment } from "src/environments/environment";
 import { StoreRouterConnectingModule } from "@ngrx/router-store";
+import { RecipeEffects } from "./recipes/store/recipe.effects";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -23,7 +24,7 @@ import { StoreRouterConnectingModule } from "@ngrx/router-store";
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipeEffects]),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),
     SharedModule,
