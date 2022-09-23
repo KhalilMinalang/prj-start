@@ -11,6 +11,7 @@ import {
 export class DropdownDirective {
   @HostBinding("class.open") isOpen = false;
 
+  // need to breakdown and understand the code
   // @HostListener("click") toggleOpen() {
   //   this.isOpen = !this.isOpen;
   // }

@@ -5,7 +5,6 @@ import {
   HttpParams,
   HttpRequest,
 } from "@angular/common/http";
-import { AuthService } from "./auth.service";
 import { exhaustMap, map, take } from "rxjs/operators";
 import { Store } from "@ngrx/store";
 import * as fromApp from "../store/app.reducer";
