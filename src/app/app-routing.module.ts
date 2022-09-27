@@ -32,9 +32,10 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(appRoutes, {
-      // preloadingStrategy: NoPreloading, // default setting
-      preloadingStrategy: PreloadAllModules,
-    }),
+    // preloadingStrategy: NoPreloading, // default setting
+    preloadingStrategy: PreloadAllModules,
+    initialNavigation: 'enabledBlocking'
+}),
   ],
   exports: [RouterModule],
 })
