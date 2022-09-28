@@ -1,15 +1,15 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Subscription } from "rxjs";
-import { Store } from "@ngrx/store";
-import { map } from "rxjs/operators";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { map } from 'rxjs/operators';
 
-import * as fromApp from "../store/app.reducer";
-import * as AuthActions from "../auth/store/auth.actions";
-import * as RecipeActions from "../recipes/store/recipe.actions";
+import * as fromApp from '../store/app.reducer';
+import * as AuthActions from '../auth/store/auth.actions';
+import * as RecipeActions from '../recipes/store/recipe.actions';
 
 @Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
+  selector: 'app-header',
+  templateUrl: './header.component.html',
 })
 
 // a component is just a header class
@@ -21,9 +21,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // this.userSub = this.authService.user.subscribe((user) => {
     this.userSub = this.store
-      .select("auth")
+      .select('auth')
       .pipe(map((authState) => authState.user))
       .subscribe((user) => {
+        console.log(user);
         // old way
         // this.isAuthenticated = !user ? false : true;
         // new way

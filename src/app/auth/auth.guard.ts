@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import * as fromApp from '../store/app.reducer';
+import * as AuthActions from '../auth/store/auth.actions';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
@@ -23,12 +24,15 @@ export class AuthGuard implements CanActivate {
     | UrlTree
     | Promise<boolean | UrlTree>
     | Observable<boolean | UrlTree> {
+    this.store.dispatch(new AuthActions.AutoLogin());
     return this.store.select('auth').pipe(
       take(1),
       map((authState) => {
+        console.log(authState);
         return authState.user;
       }),
       map((user) => {
+        console.log(user);
         // return !!user;
         const isAuth = !!user;
         if (isAuth) {
